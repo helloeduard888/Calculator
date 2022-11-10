@@ -17,6 +17,7 @@ struct BetCalculatorApp: App {
             ZStack {
                 if settings.isAllowed {
                     WebView(url: settings.url ?? Constants.getMainURL(includeParams: true))
+                        .ignoresSafeArea()
                 } else {
                     appView
                 }

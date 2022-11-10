@@ -8,11 +8,30 @@
 import SwiftUI
 import WebKit
 
-struct WebView: UIViewRepresentable {
+struct WebView: UIViewControllerRepresentable {
     @EnvironmentObject private var settings: Settings
     let url: URL
     
-    func makeUIView(context: Context) -> WKWebView {
+    func makeUIViewController(context: Context) -> WebController {
+        let controller = WebController()
+        let view = controller.view!
+        let webView = makeWebView()
+        view.addSubview(webView)
+        webView.navigationDelegate = controller
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            webView.topAnchor.constraint(equalTo: view.topAnchor),
+            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: WebController, context: Context) {
+    }
+
+    private func makeWebView() -> WKWebView {
         let preferences = WKPreferences()
         preferences.setValue(false, forKey: "fullScreenEnabled")
         
@@ -28,32 +47,23 @@ struct WebView: UIViewRepresentable {
         webView.scrollView.isScrollEnabled = true
         webView.load(URLRequest(url: url))
         return webView
-        
+    }
+}
+
+final class WebController: UIViewController, WKNavigationDelegate {
+    private let id = "swiftui_custom_spinner"
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        let views = view.subviews.filter{ $0.accessibilityIdentifier == id }
+        views.forEach { $0.removeFromSuperview() }
     }
     
-    func makeCoordinator() -> Coordinator {
-        Coordinator()
-    }
-    
-    func updateUIView(_ webView: WKWebView, context: Context) {
-    }
-    
-    final class Coordinator: NSObject, WKNavigationDelegate {
-        
-        private let id = "custom_spinner"
-        
-        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-            guard let spinner = webView.subviews.first(where: {$0.accessibilityIdentifier == id}) else { return }
-            spinner.removeFromSuperview()
-        }
-        
-        func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-            let spinner = Spinner().foregroundColor(.gray)
-            guard let spinnerView = UIHostingController(rootView: spinner).view else { return }
-            spinnerView.accessibilityIdentifier = id
-            spinnerView.frame = webView.bounds
-            webView.addSubview(spinnerView)
-        }
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        let spinner = Spinner().foregroundColor(.black)
+        guard let spinnerView = UIHostingController(rootView: spinner).view else { return }
+        spinnerView.accessibilityIdentifier = id
+        spinnerView.frame = webView.bounds.insetBy(dx: 100, dy: 300)
+        view.addSubview(spinnerView)
     }
 }
 

@@ -17,11 +17,7 @@ final class LoadingViewModel: ObservableObject {
     func makeRequest(completion: @escaping (RequestResult) -> Void) {
         let task = URLSession.shared.dataTask(with: Constants.getMainURL(includeParams: false)) { data, _, error in
             guard error == nil, let data = data, let string = String(data: data, encoding: .utf8)
-            else {
-                print(error?.localizedDescription)
-                return completion(.proceedToApp)
-            }
-            print(string)
+            else { return completion(.proceedToApp) }
             completion(string == "0" ? .proceedToApp : .proceedToWeb)
         }
         task.resume()
