@@ -15,8 +15,10 @@ struct MainTabView: View {
             switch index {
             case 0:
                 MainView(viewModel: .init(persistence: .shared))
+                    .transition(.identity)
             case 1:
-                AddView()
+                AddView(viewModel: .init())
+                    .transition(.identity)
             case 2:
                 HistoryView()
             default:

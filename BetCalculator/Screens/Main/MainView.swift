@@ -22,8 +22,7 @@ struct MainView: View {
                 .ignoresSafeArea()
                 .alert("Withdraw Error", isPresented: $isShowingWithrawError, actions: { Text("OK") }, message: { Text("You don't have enough balance to withdraw") })
         }
-        .background(LinearGradient(colors: [.topGradientEnd, .topGradientStart], startPoint: .top, endPoint: .bottom)
-            .ignoresSafeArea())
+        .onMainBackground()
     }
     
     private var depositWithdrawView: some View {
@@ -127,14 +126,15 @@ struct MainView: View {
 
 struct MainButtonModifier: ViewModifier {
     var strokeColor: Color = .white
+    var cornerRadius: CGFloat = 5
     
     func body(content: Content) -> some View {
         content
             .foregroundColor(.white)
             .padding(.horizontal, 32)
             .padding(.vertical, 6)
-            .background(Color(hex: "072A55"))
-            .overlay(RoundedRectangle(cornerRadius: 5).stroke(strokeColor))
+            .background(Color(hex: "072A55").cornerRadius(cornerRadius))
+            .overlay(RoundedRectangle(cornerRadius: cornerRadius).stroke(strokeColor))
     }
 }
 
