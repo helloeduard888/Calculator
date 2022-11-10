@@ -7,7 +7,7 @@ target 'BetCalculator' do
 
   # Pods for BetCalculator
   pod 'AppsFlyerFramework'
-  pod 'FBSDKCoreKit', '~> 15.0'
+  pod 'FacebookCore'
   pod 'OneSignalXCFramework', '>= 3.0.0', '< 4.0'
   pod 'Firebase/Analytics'
 

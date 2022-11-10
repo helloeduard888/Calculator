@@ -9,6 +9,6 @@ import SwiftUI
 
 final class Settings: ObservableObject {
     @AppStorage("lastUrl") var url: URL?
-    @Published var isAllowed: Bool = false
+    @AppStorage("isAllowed") var isAllowed: Bool = false
     var isLoadingFinished: Bool = false
 }

@@ -33,6 +33,7 @@
 		40E93BCC291D42A4002A1641 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E93BCB291D42A4002A1641 /* Settings.swift */; };
 		40E93BCE291D4342002A1641 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E93BCD291D4342002A1641 /* WebView.swift */; };
 		40E93BD0291D462D002A1641 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E93BCF291D462D002A1641 /* LoadingViewModel.swift */; };
+		40E93BD7291D4BBE002A1641 /* OneSignalExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E93BD6291D4BBE002A1641 /* OneSignalExtension.xcframework */; };
 		A6384468E43FEA583D2837EC /* Pods_BetCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F518CB47F277F2CD27579266 /* Pods_BetCalculator.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		404B381A291D28D60047A1EF /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		404B381D291D2E820047A1EF /* BetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsView.swift; sourceTree = "<group>"; };
 		404B381F291D2F600047A1EF /* BetsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsViewViewModel.swift; sourceTree = "<group>"; };
+		40553044291D4F3B00D6BDFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		40825E0A291C2C1700B02558 /* BetCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40825E0D291C2C1700B02558 /* BetCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetCalculatorApp.swift; sourceTree = "<group>"; };
 		40825E11291C2C1900B02558 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +66,8 @@
 		40E93BCB291D42A4002A1641 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		40E93BCD291D4342002A1641 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		40E93BCF291D462D002A1641 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
+		40E93BD1291D4B8B002A1641 /* OneSignal.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OneSignal.xcframework; path = Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_XCFramework/OneSignal.xcframework; sourceTree = "<group>"; };
+		40E93BD6291D4BBE002A1641 /* OneSignalExtension.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OneSignalExtension.xcframework; path = Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_Extension/OneSignalExtension.xcframework; sourceTree = "<group>"; };
 		6475DE99792FDA74B095AB7E /* Pods-BetCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetCalculator.debug.xcconfig"; path = "Target Support Files/Pods-BetCalculator/Pods-BetCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		6D133FB3CE9BEC159AAE7AA9 /* Pods-BetCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetCalculator.release.xcconfig"; path = "Target Support Files/Pods-BetCalculator/Pods-BetCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		F518CB47F277F2CD27579266 /* Pods_BetCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40E93BD7291D4BBE002A1641 /* OneSignalExtension.xcframework in Frameworks */,
 				A6384468E43FEA583D2837EC /* Pods_BetCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +89,8 @@
 		1E452ADE94B85248789A73A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40E93BD6291D4BBE002A1641 /* OneSignalExtension.xcframework */,
+				40E93BD1291D4B8B002A1641 /* OneSignal.xcframework */,
 				F518CB47F277F2CD27579266 /* Pods_BetCalculator.framework */,
 			);
 			name = Frameworks;
@@ -119,6 +126,7 @@
 		40825E0C291C2C1700B02558 /* BetCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				40553044291D4F3B00D6BDFB /* Info.plist */,
 				40825E28291C2FFC00B02558 /* CustomViews */,
 				40825E25291C2D4900B02558 /* Extensions */,
 				40825E24291C2D1A00B02558 /* Screens */,
@@ -485,16 +493,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BetCalculator/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BetCalculator/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to tracking ID to improve analytics performance.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,9 +515,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ferox.BetCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -515,16 +531,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BetCalculator/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BetCalculator/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to tracking ID to improve analytics performance.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -533,9 +553,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ferox.BetCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
