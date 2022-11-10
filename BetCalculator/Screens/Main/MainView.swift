@@ -18,22 +18,18 @@ struct MainView: View {
         VStack(spacing: 0) {
             depositWithdrawView
             totalsView
-            Color(hex: "04316A")
-                .ignoresSafeArea()
-                .alert("Withdraw Error", isPresented: $isShowingWithrawError, actions: { Text("OK") }, message: { Text("You don't have enough balance to withdraw") })
+            BetsView(viewModel: viewModel.betsModel, viewForBet: view(for:))
         }
+        .alert("Withdraw Error", isPresented: $isShowingWithrawError, actions: { Text("OK") }, message: { Text("You don't have enough balance to withdraw") })
         .onMainBackground()
     }
     
     private var depositWithdrawView: some View {
         VStack {
-            Spacer()
-            
             Text(viewModel.balance)
                 .font(.mainFont(size: 31, weight: .medium))
                 .foregroundColor(.white)
-            
-            Spacer()
+                .padding(.vertical)
             
             HStack(spacing: 20) {
                 depositButton
@@ -50,22 +46,21 @@ struct MainView: View {
                                     message: "Enter withdraw amount",
                                     action: handleWithdraw(_:))
             }
-            
-            Spacer()
         }
+        .padding(.bottom)
         .frame(maxWidth: .infinity)
     }
     
     private var totalsView: some View {
         HStack {
-            VStack(spacing: 42) {
+            VStack(spacing: 26) {
                 Text("Total won:")
                     .font(.mainFont(size: 21))
                 
                 Text("Total lost:")
                     .font(.mainFont(size: 21))
             }
-            VStack(spacing: 32) {
+            VStack(spacing: 16) {
                 Text(viewModel.totalWon)
                     .font(.mainFont(size: 21))
                     .modifier(MainButtonModifier(strokeColor: .green))
@@ -76,7 +71,7 @@ struct MainView: View {
             }
         }
         .foregroundColor(.white)
-        .padding(.vertical, 40)
+        .padding(.vertical, 16)
         .frame(maxWidth: .infinity)
         .background(Color(hex: "082A56"))
     }
@@ -102,6 +97,78 @@ struct MainView: View {
             Text("Withdraw")
                 .font(.mainFont())
                 .modifier(MainButtonModifier())
+        }
+    }
+    
+    private func view(for bet: Bet) -> some View {
+        VStack {
+            HStack(spacing: 30) {
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Bet:")
+                        .font(.mainFont(size: 15, weight: .light))
+                    Text("Amount:")
+                        .font(.mainFont(size: 15, weight: .light))
+                    Text("Multiplier:")
+                        .font(.mainFont(size: 15, weight: .light))
+                    Text("Possible win:")
+                        .font(.mainFont(size: 15, weight: .light))
+                }
+                .foregroundColor(.white)
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(bet.title ?? "N/A")
+                        .font(.mainFont(weight: .semibold))
+                    Text(viewModel.formattedString(for: bet.amount))
+                        .font(.mainFont(weight: .semibold))
+                    Text(String(format: "%.2f", bet.multiplier))
+                        .font(.mainFont(weight: .semibold))
+                    Text(viewModel.formattedString(for: bet.amount * bet.multiplier))
+                        .font(.mainFont(weight: .semibold))
+                }
+                .foregroundColor(.white)
+                
+                Spacer()
+                
+                VStack {
+                    winButton(for: bet)
+                    Spacer()
+                    loseButton(for: bet)
+                }
+            }
+            
+            Rectangle().stroke(.white).frame(maxHeight: 0.5)
+        }
+        .padding(.horizontal)
+        .padding(.top)
+    }
+    
+    private func winButton(for bet: Bet) -> some View {
+        Button {
+            withAnimation {
+                viewModel.win(bet)
+            }
+        } label: {
+            Image(systemName: "checkmark.circle.fill")
+                .resizable()
+                .scaledToFit()
+                .aspectRatio(1, contentMode: .fit)
+                .foregroundColor(.white)
+                .frame(width: 40)
+        }
+    }
+    
+    private func loseButton(for bet: Bet) -> some View {
+        Button {
+            withAnimation {
+                viewModel.lose(bet)
+            }
+        } label: {
+            Image(systemName: "xmark.circle.fill")
+                .resizable()
+                .scaledToFit()
+                .aspectRatio(1, contentMode: .fit)
+                .foregroundColor(.red)
+                .frame(width: 40)
         }
     }
     

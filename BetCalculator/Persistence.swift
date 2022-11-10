@@ -13,6 +13,13 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
+        for i in 1..<10 {
+            let bet = Bet(context: viewContext)
+            bet.title = i.description
+            bet.amount = Double(i * 1000)
+            bet.multiplier = Double(i) * 1.1
+            bet.timestamp = Date()
+        }
         do {
             try viewContext.save()
         } catch {

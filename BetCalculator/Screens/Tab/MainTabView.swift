@@ -17,10 +17,13 @@ struct MainTabView: View {
                 MainView(viewModel: .init(persistence: .shared))
                     .transition(.identity)
             case 1:
-                AddView(viewModel: .init(persistence: .shared))
+                AddView(viewModel: .init(persistence: .shared)) {
+                    withAnimation { selection = 0 }
+                }
                     .transition(.identity)
             case 2:
                 HistoryView()
+                    .transition(.identity)
             default:
                 EmptyView()
             }

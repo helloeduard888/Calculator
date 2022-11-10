@@ -13,6 +13,8 @@
 		404B3817291D02BF0047A1EF /* View+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B3816291D02BF0047A1EF /* View+Background.swift */; };
 		404B3819291D03D00047A1EF /* AddBetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B3818291D03D00047A1EF /* AddBetViewModel.swift */; };
 		404B381B291D28D60047A1EF /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B381A291D28D60047A1EF /* Alert.swift */; };
+		404B381E291D2E820047A1EF /* BetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B381D291D2E820047A1EF /* BetsView.swift */; };
+		404B3820291D2F600047A1EF /* BetsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B381F291D2F600047A1EF /* BetsViewViewModel.swift */; };
 		40825E0E291C2C1700B02558 /* BetCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40825E0D291C2C1700B02558 /* BetCalculatorApp.swift */; };
 		40825E12291C2C1900B02558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40825E11291C2C1900B02558 /* Assets.xcassets */; };
 		40825E15291C2C1900B02558 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40825E14291C2C1900B02558 /* Preview Assets.xcassets */; };
@@ -36,6 +38,8 @@
 		404B3816291D02BF0047A1EF /* View+Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Background.swift"; sourceTree = "<group>"; };
 		404B3818291D03D00047A1EF /* AddBetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBetViewModel.swift; sourceTree = "<group>"; };
 		404B381A291D28D60047A1EF /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		404B381D291D2E820047A1EF /* BetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsView.swift; sourceTree = "<group>"; };
+		404B381F291D2F600047A1EF /* BetsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsViewViewModel.swift; sourceTree = "<group>"; };
 		40825E0A291C2C1700B02558 /* BetCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40825E0D291C2C1700B02558 /* BetCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetCalculatorApp.swift; sourceTree = "<group>"; };
 		40825E11291C2C1900B02558 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		404B381C291D2E6D0047A1EF /* BetsView */ = {
+			isa = PBXGroup;
+			children = (
+				404B381D291D2E820047A1EF /* BetsView.swift */,
+				404B381F291D2F600047A1EF /* BetsViewViewModel.swift */,
+			);
+			path = BetsView;
+			sourceTree = "<group>";
+		};
 		40825E01291C2C1600B02558 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +161,7 @@
 		40825E2E291C347900B02558 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				404B381C291D2E6D0047A1EF /* BetsView */,
 				40825E31291C349E00B02558 /* MainView.swift */,
 				404B3812291CF3220047A1EF /* MainViewViewModel.swift */,
 			);
@@ -256,9 +270,11 @@
 				404B380F291CE3BA0047A1EF /* Constants.swift in Sources */,
 				40825E1A291C2C1900B02558 /* BetCalculator.xcdatamodeld in Sources */,
 				40825E38291C354700B02558 /* MainTabView.swift in Sources */,
+				404B3820291D2F600047A1EF /* BetsViewViewModel.swift in Sources */,
 				404B3813291CF3220047A1EF /* MainViewViewModel.swift in Sources */,
 				404B3819291D03D00047A1EF /* AddBetViewModel.swift in Sources */,
 				404B3811291CE5560047A1EF /* View+Alert.swift in Sources */,
+				404B381E291D2E820047A1EF /* BetsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

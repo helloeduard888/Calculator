@@ -5,7 +5,7 @@
 //  Created by Игорь Майсюк on 10.11.22.
 //
 
-import Combine
+import Foundation
 
 enum CreateBetError: Error {
     case emptyName
@@ -28,10 +28,14 @@ final class AddBetViewModel: ObservableObject {
         guard !name.isEmpty else { throw CreateBetError.emptyName }
         guard let amount = Double(amount), amount > 0 else { throw CreateBetError.invalidAmount }
         guard let multiplier = Double(multiplier), multiplier > 1 else { throw CreateBetError.invalidMultiplier }
+        let user = persistence.getOrCreateUser()
+        user.totalBalance -= amount
+        
         let bet = Bet(context: persistence.container.viewContext)
         bet.title = name
         bet.multiplier = multiplier
         bet.amount = amount
+        bet.timestamp = Date()
         persistence.save()
     }
 }

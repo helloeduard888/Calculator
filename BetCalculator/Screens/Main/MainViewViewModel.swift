@@ -5,8 +5,7 @@
 //  Created by Игорь Майсюк on 10.11.22.
 //
 
-import Combine
-import CoreData
+import Foundation
 
 enum WithdrawError: Error {
     case exceedsMaximum
@@ -15,9 +14,11 @@ enum WithdrawError: Error {
 final class MainViewViewModel: ObservableObject {
     
     private let persistence: PersistenceController
+    @Published private(set) var betsModel: BetsViewModel
     
     init(persistence: PersistenceController) {
         self.persistence = persistence
+        self.betsModel = .init(persistence: persistence, predicate: NSPredicate(format: "isWon == NULL"))
     }
     
     var balance: String {
@@ -68,7 +69,23 @@ final class MainViewViewModel: ObservableObject {
         objectWillChange.send()
     }
     
-    private func formattedString(for amount: Double) -> String {
+    func win(_ bet: Bet) {
+        bet.isWon = true
+        let user = persistence.getOrCreateUser()
+        user.totalBalance += (bet.amount * bet.multiplier)
+        persistence.save()
+        objectWillChange.send()
+        betsModel.objectWillChange.send()
+    }
+    
+    func lose(_ bet: Bet) {
+        bet.isWon = false
+        persistence.save()
+        objectWillChange.send()
+        betsModel.objectWillChange.send()
+    }
+    
+    func formattedString(for amount: Double) -> String {
         String(format: "%.1f", amount) + Constants.currency
     }
 }

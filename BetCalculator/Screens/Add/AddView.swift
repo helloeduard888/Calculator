@@ -12,6 +12,7 @@ struct AddView: View {
     @StateObject var viewModel: AddBetViewModel
     @FocusState private var selectedField: Field?
     @State private var alertMessage: AlertMessage?
+    var saveAction: (() -> Void)?
     
     enum Field {
         case betName
@@ -109,6 +110,7 @@ struct AddView: View {
     private func handleBet() {
         do {
             try viewModel.saveBet()
+            saveAction?()
         } catch let error as CreateBetError {
             switch error {
             case .invalidMultiplier:
