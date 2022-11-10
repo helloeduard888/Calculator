@@ -11,6 +11,7 @@ struct AddView: View {
     
     @StateObject var viewModel: AddBetViewModel
     @FocusState private var selectedField: Field?
+    @State private var alertMessage: AlertMessage?
     
     enum Field {
         case betName
@@ -24,6 +25,7 @@ struct AddView: View {
             Text("Add Bet")
                 .font(.mainFont(size: 31, weight: .light))
                 .foregroundColor(.white)
+                .alert(alertMessage?.title ?? "", isPresented: isErrorShown, actions: { Text("OK") }, message: { Text(alertMessage?.message ?? "") })
             Spacer()
             
             betName
@@ -43,6 +45,7 @@ struct AddView: View {
     private var saveButton: some View {
         Button {
             selectedField = nil
+            handleBet()
         } label: {
             Text("Save")
                 .font(.mainFont(size: 24, weight: .semibold))
@@ -92,10 +95,37 @@ struct AddView: View {
             .background(Color(hex: "072A55").cornerRadius(5))
             .overlay(RoundedRectangle(cornerRadius: 5).stroke(.white))
     }
+    
+    private var isErrorShown: Binding<Bool> {
+        Binding {
+            alertMessage != nil
+        } set: { _ in
+            alertMessage = nil
+        }
+    }
+    
+    // MARK: - Actions
+    
+    private func handleBet() {
+        do {
+            try viewModel.saveBet()
+        } catch let error as CreateBetError {
+            switch error {
+            case .invalidMultiplier:
+                alertMessage = .init(message: "Invalid multiplier. Multiplier must be above 1")
+            case .invalidAmount:
+                alertMessage = .init(message: "Invalid bet amount. Amount must be above 0")
+            case .emptyName:
+                alertMessage = .init(message: "Name can not be empty")
+            }
+        } catch {
+            alertMessage = .init(message: "Cannot create bet.")
+        }
+    }
 }
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
-        AddView(viewModel: .init())
+        AddView(viewModel: .init(persistence: .preview))
     }
 }

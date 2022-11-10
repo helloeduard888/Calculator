@@ -17,7 +17,7 @@ struct MainTabView: View {
                 MainView(viewModel: .init(persistence: .shared))
                     .transition(.identity)
             case 1:
-                AddView(viewModel: .init())
+                AddView(viewModel: .init(persistence: .shared))
                     .transition(.identity)
             case 2:
                 HistoryView()

@@ -12,6 +12,7 @@
 		404B3813291CF3220047A1EF /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B3812291CF3220047A1EF /* MainViewViewModel.swift */; };
 		404B3817291D02BF0047A1EF /* View+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B3816291D02BF0047A1EF /* View+Background.swift */; };
 		404B3819291D03D00047A1EF /* AddBetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B3818291D03D00047A1EF /* AddBetViewModel.swift */; };
+		404B381B291D28D60047A1EF /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B381A291D28D60047A1EF /* Alert.swift */; };
 		40825E0E291C2C1700B02558 /* BetCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40825E0D291C2C1700B02558 /* BetCalculatorApp.swift */; };
 		40825E12291C2C1900B02558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40825E11291C2C1900B02558 /* Assets.xcassets */; };
 		40825E15291C2C1900B02558 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40825E14291C2C1900B02558 /* Preview Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		404B3812291CF3220047A1EF /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		404B3816291D02BF0047A1EF /* View+Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Background.swift"; sourceTree = "<group>"; };
 		404B3818291D03D00047A1EF /* AddBetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBetViewModel.swift; sourceTree = "<group>"; };
+		404B381A291D28D60047A1EF /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		40825E0A291C2C1700B02558 /* BetCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40825E0D291C2C1700B02558 /* BetCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetCalculatorApp.swift; sourceTree = "<group>"; };
 		40825E11291C2C1900B02558 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				40825E26291C2D5800B02558 /* Fonts.swift */,
 				404B3810291CE5560047A1EF /* View+Alert.swift */,
 				404B3816291D02BF0047A1EF /* View+Background.swift */,
+				404B381A291D28D60047A1EF /* Alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				404B381B291D28D60047A1EF /* Alert.swift in Sources */,
 				40825E17291C2C1900B02558 /* Persistence.swift in Sources */,
 				40825E32291C349E00B02558 /* MainView.swift in Sources */,
 				40825E34291C34A700B02558 /* AddView.swift in Sources */,
