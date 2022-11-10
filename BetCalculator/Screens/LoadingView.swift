@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct LoadingView: View {
+    @EnvironmentObject private var settings: Settings
+    
+    @StateObject var viewModel = LoadingViewModel()
+    
     var body: some View {
         ZStack {
             Image("splash")
@@ -22,6 +26,18 @@ struct LoadingView: View {
                 Spinner()
                     .foregroundColor(.white)
                     .frame(width: 80, height: 80)
+            }
+        }
+        .onAppear {
+            viewModel.makeRequest(completion: handleResult(_:))
+        }
+    }
+    
+    private func handleResult(_ result: LoadingViewModel.RequestResult) {
+        DispatchQueue.main.async {
+            withAnimation {
+                settings.isLoadingFinished = true
+                settings.isAllowed = result == .proceedToWeb
             }
         }
     }

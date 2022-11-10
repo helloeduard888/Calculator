@@ -29,6 +29,11 @@
 		40825E36291C34B200B02558 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40825E35291C34B200B02558 /* HistoryView.swift */; };
 		40825E38291C354700B02558 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40825E37291C354700B02558 /* MainTabView.swift */; };
 		40825E3A291C41D900B02558 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40825E39291C41D900B02558 /* CustomTabView.swift */; };
+		40E93BCA291D4198002A1641 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E93BC9291D4198002A1641 /* AppDelegate.swift */; };
+		40E93BCC291D42A4002A1641 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E93BCB291D42A4002A1641 /* Settings.swift */; };
+		40E93BCE291D4342002A1641 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E93BCD291D4342002A1641 /* WebView.swift */; };
+		40E93BD0291D462D002A1641 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E93BCF291D462D002A1641 /* LoadingViewModel.swift */; };
+		A6384468E43FEA583D2837EC /* Pods_BetCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F518CB47F277F2CD27579266 /* Pods_BetCalculator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +60,13 @@
 		40825E35291C34B200B02558 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		40825E37291C354700B02558 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		40825E39291C41D900B02558 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		40E93BC9291D4198002A1641 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		40E93BCB291D42A4002A1641 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		40E93BCD291D4342002A1641 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		40E93BCF291D462D002A1641 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
+		6475DE99792FDA74B095AB7E /* Pods-BetCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetCalculator.debug.xcconfig"; path = "Target Support Files/Pods-BetCalculator/Pods-BetCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		6D133FB3CE9BEC159AAE7AA9 /* Pods-BetCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetCalculator.release.xcconfig"; path = "Target Support Files/Pods-BetCalculator/Pods-BetCalculator.release.xcconfig"; sourceTree = "<group>"; };
+		F518CB47F277F2CD27579266 /* Pods_BetCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +74,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6384468E43FEA583D2837EC /* Pods_BetCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E452ADE94B85248789A73A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F518CB47F277F2CD27579266 /* Pods_BetCalculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		404B381C291D2E6D0047A1EF /* BetsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +103,8 @@
 			children = (
 				40825E0C291C2C1700B02558 /* BetCalculator */,
 				40825E0B291C2C1700B02558 /* Products */,
+				BA146440DD00713DEDB147C1 /* Pods */,
+				1E452ADE94B85248789A73A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,9 +125,11 @@
 				40825E11291C2C1900B02558 /* Assets.xcassets */,
 				40825E16291C2C1900B02558 /* Persistence.swift */,
 				40825E0D291C2C1700B02558 /* BetCalculatorApp.swift */,
+				40E93BC9291D4198002A1641 /* AppDelegate.swift */,
+				404B380E291CE3BA0047A1EF /* Constants.swift */,
 				40825E18291C2C1900B02558 /* BetCalculator.xcdatamodeld */,
 				40825E13291C2C1900B02558 /* Preview Content */,
-				404B380E291CE3BA0047A1EF /* Constants.swift */,
+				40E93BCB291D42A4002A1641 /* Settings.swift */,
 			);
 			path = BetCalculator;
 			sourceTree = "<group>";
@@ -126,6 +151,7 @@
 				40825E2E291C347900B02558 /* Main */,
 				40825E2D291C344100B02558 /* Tab */,
 				40825E22291C2D1500B02558 /* LoadingView.swift */,
+				40E93BCF291D462D002A1641 /* LoadingViewModel.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -147,6 +173,7 @@
 			children = (
 				40825E29291C301A00B02558 /* Spinner.swift */,
 				40825E39291C41D900B02558 /* CustomTabView.swift */,
+				40E93BCD291D4342002A1641 /* WebView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -185,6 +212,15 @@
 			path = History;
 			sourceTree = "<group>";
 		};
+		BA146440DD00713DEDB147C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6475DE99792FDA74B095AB7E /* Pods-BetCalculator.debug.xcconfig */,
+				6D133FB3CE9BEC159AAE7AA9 /* Pods-BetCalculator.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40825E1D291C2C1900B02558 /* Build configuration list for PBXNativeTarget "BetCalculator" */;
 			buildPhases = (
+				F80E7E5F865DFFCA4F7C203C /* [CP] Check Pods Manifest.lock */,
 				40825E06291C2C1700B02558 /* Sources */,
 				40825E07291C2C1700B02558 /* Frameworks */,
 				40825E08291C2C1700B02558 /* Resources */,
+				6AA854122F96D622D0FB4A32 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,12 +288,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6AA854122F96D622D0FB4A32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BetCalculator/Pods-BetCalculator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BetCalculator/Pods-BetCalculator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BetCalculator/Pods-BetCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F80E7E5F865DFFCA4F7C203C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BetCalculator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		40825E06291C2C1700B02558 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				404B381B291D28D60047A1EF /* Alert.swift in Sources */,
+				40E93BCE291D4342002A1641 /* WebView.swift in Sources */,
 				40825E17291C2C1900B02558 /* Persistence.swift in Sources */,
 				40825E32291C349E00B02558 /* MainView.swift in Sources */,
 				40825E34291C34A700B02558 /* AddView.swift in Sources */,
@@ -265,6 +346,7 @@
 				40825E36291C34B200B02558 /* HistoryView.swift in Sources */,
 				40825E2A291C301A00B02558 /* Spinner.swift in Sources */,
 				40825E23291C2D1500B02558 /* LoadingView.swift in Sources */,
+				40E93BD0291D462D002A1641 /* LoadingViewModel.swift in Sources */,
 				40825E2C291C33AD00B02558 /* Color.swift in Sources */,
 				40825E27291C2D5800B02558 /* Fonts.swift in Sources */,
 				404B380F291CE3BA0047A1EF /* Constants.swift in Sources */,
@@ -273,7 +355,9 @@
 				404B3820291D2F600047A1EF /* BetsViewViewModel.swift in Sources */,
 				404B3813291CF3220047A1EF /* MainViewViewModel.swift in Sources */,
 				404B3819291D03D00047A1EF /* AddBetViewModel.swift in Sources */,
+				40E93BCA291D4198002A1641 /* AppDelegate.swift in Sources */,
 				404B3811291CE5560047A1EF /* View+Alert.swift in Sources */,
+				40E93BCC291D42A4002A1641 /* Settings.swift in Sources */,
 				404B381E291D2E820047A1EF /* BetsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +481,7 @@
 		};
 		40825E1E291C2C1900B02558 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6475DE99792FDA74B095AB7E /* Pods-BetCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -426,6 +511,7 @@
 		};
 		40825E1F291C2C1900B02558 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D133FB3CE9BEC159AAE7AA9 /* Pods-BetCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

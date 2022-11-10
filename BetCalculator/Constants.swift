@@ -9,4 +9,8 @@ import Foundation
 
 enum Constants {
     static let currency = "$"
+    static let appsflyerKey = ""
+    static let appleID = ""
+    static let onesignalKey = ""
+    static let baseUrl = URL(string: "https://agemova.info/kyskys.php")!
 }
