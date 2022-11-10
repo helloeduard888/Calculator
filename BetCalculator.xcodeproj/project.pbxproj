@@ -120,6 +120,7 @@
 		40825E24291C2D1A00B02558 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				404B381C291D2E6D0047A1EF /* BetsView */,
 				40825E30291C348500B02558 /* History */,
 				40825E2F291C347F00B02558 /* Add */,
 				40825E2E291C347900B02558 /* Main */,
@@ -161,7 +162,6 @@
 		40825E2E291C347900B02558 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				404B381C291D2E6D0047A1EF /* BetsView */,
 				40825E31291C349E00B02558 /* MainView.swift */,
 				404B3812291CF3220047A1EF /* MainViewViewModel.swift */,
 			);
