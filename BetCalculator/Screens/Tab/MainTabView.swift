@@ -14,7 +14,7 @@ struct MainTabView: View {
         CustomTabView(selection: $selection) { index in
             switch index {
             case 0:
-                MainView()
+                MainView(viewModel: .init(persistence: .shared))
             case 1:
                 AddView()
             case 2:

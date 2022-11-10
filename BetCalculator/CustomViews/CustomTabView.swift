@@ -14,7 +14,6 @@ struct CustomTabView<Content: View>: View {
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 0) {
-                Spacer()
                 content(selection)
                 HStack {
                     tabItem(image: "main", title: "Main", index: 0, in: geometry)

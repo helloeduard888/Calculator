@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		404B380F291CE3BA0047A1EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B380E291CE3BA0047A1EF /* Constants.swift */; };
+		404B3811291CE5560047A1EF /* View+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B3810291CE5560047A1EF /* View+Alert.swift */; };
+		404B3813291CF3220047A1EF /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B3812291CF3220047A1EF /* MainViewViewModel.swift */; };
 		40825E0E291C2C1700B02558 /* BetCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40825E0D291C2C1700B02558 /* BetCalculatorApp.swift */; };
-		40825E10291C2C1700B02558 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40825E0F291C2C1700B02558 /* ContentView.swift */; };
 		40825E12291C2C1900B02558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40825E11291C2C1900B02558 /* Assets.xcassets */; };
 		40825E15291C2C1900B02558 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40825E14291C2C1900B02558 /* Preview Assets.xcassets */; };
 		40825E17291C2C1900B02558 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40825E16291C2C1900B02558 /* Persistence.swift */; };
@@ -25,9 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		404B380E291CE3BA0047A1EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		404B3810291CE5560047A1EF /* View+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Alert.swift"; sourceTree = "<group>"; };
+		404B3812291CF3220047A1EF /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		40825E0A291C2C1700B02558 /* BetCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40825E0D291C2C1700B02558 /* BetCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetCalculatorApp.swift; sourceTree = "<group>"; };
-		40825E0F291C2C1700B02558 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		40825E11291C2C1900B02558 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40825E14291C2C1900B02558 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		40825E16291C2C1900B02558 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -76,12 +80,12 @@
 				40825E28291C2FFC00B02558 /* CustomViews */,
 				40825E25291C2D4900B02558 /* Extensions */,
 				40825E24291C2D1A00B02558 /* Screens */,
-				40825E0F291C2C1700B02558 /* ContentView.swift */,
 				40825E11291C2C1900B02558 /* Assets.xcassets */,
 				40825E16291C2C1900B02558 /* Persistence.swift */,
 				40825E0D291C2C1700B02558 /* BetCalculatorApp.swift */,
 				40825E18291C2C1900B02558 /* BetCalculator.xcdatamodeld */,
 				40825E13291C2C1900B02558 /* Preview Content */,
+				404B380E291CE3BA0047A1EF /* Constants.swift */,
 			);
 			path = BetCalculator;
 			sourceTree = "<group>";
@@ -111,6 +115,7 @@
 			children = (
 				40825E2B291C33AD00B02558 /* Color.swift */,
 				40825E26291C2D5800B02558 /* Fonts.swift */,
+				404B3810291CE5560047A1EF /* View+Alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				40825E31291C349E00B02558 /* MainView.swift */,
+				404B3812291CF3220047A1EF /* MainViewViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -229,7 +235,6 @@
 				40825E17291C2C1900B02558 /* Persistence.swift in Sources */,
 				40825E32291C349E00B02558 /* MainView.swift in Sources */,
 				40825E34291C34A700B02558 /* AddView.swift in Sources */,
-				40825E10291C2C1700B02558 /* ContentView.swift in Sources */,
 				40825E0E291C2C1700B02558 /* BetCalculatorApp.swift in Sources */,
 				40825E3A291C41D900B02558 /* CustomTabView.swift in Sources */,
 				40825E36291C34B200B02558 /* HistoryView.swift in Sources */,
@@ -237,8 +242,11 @@
 				40825E23291C2D1500B02558 /* LoadingView.swift in Sources */,
 				40825E2C291C33AD00B02558 /* Color.swift in Sources */,
 				40825E27291C2D5800B02558 /* Fonts.swift in Sources */,
+				404B380F291CE3BA0047A1EF /* Constants.swift in Sources */,
 				40825E1A291C2C1900B02558 /* BetCalculator.xcdatamodeld in Sources */,
 				40825E38291C354700B02558 /* MainTabView.swift in Sources */,
+				404B3813291CF3220047A1EF /* MainViewViewModel.swift in Sources */,
+				404B3811291CE5560047A1EF /* View+Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
